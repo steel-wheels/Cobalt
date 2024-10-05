@@ -8,14 +8,14 @@
 import CoconutData
 import Foundation
 
-public class CBOptionType
+final public class CBOptionType: Sendable
 {
-	public var optionId:		Int
-	public var shortName: 		Character?
-	public var longName:  		String?
-	public var parameterType:	CBValueType
-	public var parameterNum:	Int
-	public var helpInfo:		String
+	public let optionId:		Int
+	public let shortName: 		Character?
+	public let longName:  		String?
+	public let parameterType:	CBValueType
+	public let parameterNum:	Int
+	public let helpInfo:		String
 
 	public init(optionId oid: Int, shortName sname: Character?, longName lname: String?, parameterNum pnum: Int, parameterType ptype: CBValueType, helpInfo help:String){
 		optionId	= oid

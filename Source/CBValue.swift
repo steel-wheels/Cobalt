@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CBValueType: Int {
+public enum CBValueType: Sendable {
 	case voidType
 	case intType
 	case doubleType
@@ -19,15 +19,15 @@ public enum CBValue {
 	case doubleValue(Double)
 	case stringValue(String)
 
-	public var type: CBValueType {
-		let result: CBValueType
-		switch self {
-		case .intValue(_):	result = .intType
-		case .doubleValue(_):	result = .doubleType
-		case .stringValue(_):	result = .stringType
-		}
-		return result
-	}
+        public var type: CBValueType { get {
+                let result: CBValueType
+                switch self {
+                case .intValue(_):	result = .intType
+                case .doubleValue(_):	result = .doubleType
+                case .stringValue(_):	result = .stringType
+                }
+                return result
+        }}
 
 	public var description: String { get {
 		let result: String
